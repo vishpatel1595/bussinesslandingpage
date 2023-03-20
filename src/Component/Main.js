@@ -12,20 +12,18 @@ function Main() {
     return (
         <Box>
             <Box as="section">
-        
                 <Carousel/>  
-                
             </Box>
-            <Box as="section" pt='40'>
+            <Box as="section" pt={[12, 12, 20, 40]}>
                 <CardContents/>
             </Box>
-            <Box as="section" py='40'>
+            <Box as="section" py={[12, 12, 20, 40]}>
                 <ThreeTierPricingHorizontal/>
             </Box>
-            <Box as="section" pb="40">
+            <Box as="section" pb={[12, 12, 20, 40]}>
             <StatsTitleDescription/>
             </Box>
-            <Box as="section" >
+            <Box as="section"  >
             <WithSpeechBubbles/>
             </Box>
         </Box>

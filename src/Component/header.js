@@ -1,8 +1,8 @@
+import uuid from "react-uuid"
 import {
   Box,
   Flex,
   Avatar,
-  Link,
   Button,
   Menu,
   MenuButton,
@@ -18,22 +18,15 @@ import {
   HStack
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
-
+import { NavLink } from 'react-router-dom';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 
-const NavLink = (props) => {
+const Link = (props) => {
   return (
-    <Link
-      px={2}
-      py={1}
-      rounded={'md'}
-      _hover={{
-        textDecoration: 'none',
-        bg: useColorModeValue('gray.200', 'gray.700'),
-      }}
-      href={props.to}>
+    <NavLink
+      to={props.to}>
       {props.children}
-    </Link>
+    </NavLink>
   )
 };
 
@@ -45,7 +38,7 @@ export default function Nav() {
 
     <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
       <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-        <Box>Bussiness</Box>
+        <Box>Bussiness Plaza</Box>
         <Flex alignItems={'center'}>
           <Stack direction={'row'} spacing={7}>
             <IconButton
@@ -61,7 +54,7 @@ export default function Nav() {
               display={{ base: 'none', md: 'flex' }}>
               {Links.map((link) => {
                 return (
-                  <NavLink key={link} to={link.to}>{link.Title}</NavLink>
+                  <Link key={uuid()} to={link.to}>{link.Title}</Link>
                 )
               })}
             </HStack>
@@ -109,7 +102,7 @@ export default function Nav() {
             {Links.map((link) => {
               debugger
               return (
-                <NavLink key={link} to={link.to}>{link.Title}</NavLink>
+                <Link  key={uuid()} to={link.to}>{link.Title}</Link>
               )
             })}
           </Stack>

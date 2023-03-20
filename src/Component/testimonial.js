@@ -11,12 +11,13 @@ import {
 } from '@chakra-ui/react';
 
 const Testimonial = ({ children}) => {
-  return <Box>{children}</Box>;
+  return <Box >{children}</Box>;
 };
 
 const TestimonialContent = ({ children }) => {
   return (
     <Stack
+      
       bg={useColorModeValue('white', 'gray.800')}
       boxShadow={'lg'}
       p={8}
@@ -83,7 +84,7 @@ const TestimonialAvatar = ({
 
 export default function WithSpeechBubbles() {
   return (
-    <Box bg={useColorModeValue('gray.100', 'gray.700')}>
+    <Box py={[12, 12, 20, 20]} bg={useColorModeValue('gray.100', 'gray.700')}>
       <Container maxW={'7xl'} py={16} as={Stack} spacing={12}>
         <Stack spacing={0} align={'center'}>
           <Heading>Our Clients Speak</Heading>

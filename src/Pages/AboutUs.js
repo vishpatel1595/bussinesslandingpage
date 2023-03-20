@@ -1,3 +1,4 @@
+import FormControlAbout from "../Component/FormContact";
 import AboutHero from "../Component/AboutHero";
 import GridList from "../Component/GridList";
 function AboutUs() {
@@ -5,7 +6,7 @@ function AboutUs() {
         <>
         <AboutHero/>
         <GridList/>
-
+        <FormControlAbout/>
         </>
     );
 }
