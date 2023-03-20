@@ -15,12 +15,13 @@ import {
   Stack,
   useColorMode,
   Center,
+  Image,
   HStack
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { NavLink } from 'react-router-dom';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
-
+import Logo from '../assets/logo.png'
 const Link = (props) => {
   return (
     <NavLink
@@ -29,16 +30,15 @@ const Link = (props) => {
     </NavLink>
   )
 };
-
 export default function Nav() {
   const { colorMode, toggleColorMode } = useColorMode();
-  const Links = [{ Title: 'Home', to: "/" }, { Title: 'About Us', to: "/AboutUs" }, { Title: 'Team', to: "/team" }];
+  const Links = [{ Title: 'Home', to: "/" }, { Title: 'About Us', to: "/AboutUs" }, { Title: 'Team', to: "/team" }, { Title: 'PricingPlan', to: "/PricingPlan" }];
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
 
     <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
       <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-        <Box>Bussiness Plaza</Box>
+        <Box fontSize={'25px'}>Bussiness Plaza</Box>
         <Flex alignItems={'center'}>
           <Stack direction={'row'} spacing={7}>
             <IconButton
@@ -109,6 +109,5 @@ export default function Nav() {
         </Box>
       ) : null}
     </Box>
-
   );
 }
